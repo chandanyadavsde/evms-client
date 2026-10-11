@@ -1,0 +1,29 @@
+{
+  "name": "evms-client",
+  "private": true,
+  "type": "module",
+  "workspaces": [
+    "packages/*",
+    "client",
+    "extension"
+  ],
+  "scripts": {
+    "dev": "npm run dev -w @vms/client",
+    "build": "npm run build -w @vms/client",
+    "build:extension": "npm run build -w @vms/extension",
+    "dev:extension": "npm run dev -w @vms/extension",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "lint": "biome check .",
+    "format": "biome format --write .",
+    "check": "npm run lint && npm run typecheck && npm run test",
+    "hooks:install": "git config core.hooksPath .githooks"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.2.0",
+    "typescript": "^5.9.0"
+  },
+  "engines": {
+    "node": ">=22"
+  }
+}

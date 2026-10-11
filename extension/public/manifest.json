@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "VMS Assist",
+  "version": "0.1.0",
+  "description": "Copy any area of a port portal, WhatsApp Web or email into VMS, and fill portal forms from VMS jobs.",
+  "permissions": ["sidePanel", "storage", "scripting", "activeTab", "tabs"],
+  "host_permissions": ["<all_urls>"],
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  },
+  "side_panel": {
+    "default_path": "sidepanel.html"
+  },
+  "action": {
+    "default_title": "VMS Assist"
+  },
+  "commands": {
+    "snip": {
+      "suggested_key": {
+        "default": "Alt+S"
+      },
+      "description": "Copy an area of the page into VMS"
+    },
+    "paste": {
+      "suggested_key": {
+        "default": "Alt+P"
+      },
+      "description": "Fill a form on the page from a VMS job"
+    }
+  }
+}
